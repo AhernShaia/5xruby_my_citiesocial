@@ -11,4 +11,3 @@ Rails.application.routes.draw do
     resources :vendors, except: [:show]
   end
 end
-
