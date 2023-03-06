@@ -14,7 +14,7 @@
     <tbody>
         <% @vendors.each do |vendor| %>
             <tr>
-                <td> <%= link_to vendor.title, edit_admin_vendor_path(vendor) %> </td>
+                <td> <%= link_to vendor.title, edit_admin_vendor_path(vendor), class: "tag is-large" %> </td>
                 <td> <%= strip_tags(vendor.description).truncate(100) %> </td>
                 <td> <%= vendor.online %> </td>
                 <td> <%= vendor.updated_at %></td>

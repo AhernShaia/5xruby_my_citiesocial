@@ -61,3 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.7'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+# gem 'ruby-lsp', '~> 0.4.1'
+gem 'paranoia', '~> 2.4', '>= 2.4.2'
+
