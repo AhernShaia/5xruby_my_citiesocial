@@ -64,3 +64,4 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 # gem 'ruby-lsp', '~> 0.4.1'
 gem 'paranoia', '~> 2.4', '>= 2.4.2'
 
+gem 'friendly_id', '~> 5.3'

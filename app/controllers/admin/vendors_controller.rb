@@ -1,5 +1,5 @@
 class Admin::VendorsController < Admin::BaseController
-    before_action :find_vendor,only: [:edit, :update, :show, :destory]
+    before_action :find_vendor,only: [:edit, :update, :show, :destroy]
 
     def index
         @vendors = Vendor.all

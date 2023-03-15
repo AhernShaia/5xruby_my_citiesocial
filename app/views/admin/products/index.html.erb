@@ -1,4 +1,37 @@
+
 <h1 class="title">
     商品列表
 </h1>
     <%= link_to "新增", new_admin_product_path, class: "button is-primary" %>
+<hr>
+<div class="container">
+<table class= "table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+ <thead>
+        <tr>
+            <th>商品名稱</th>
+            <th>產品編號</th>
+            <th>定價</th>
+            <th>售價</th>
+            <th>是否上架</th>
+        </tr>
+    </thead>
+
+
+ <tbody>
+    <% @products.each do |product|%>
+    
+        <tr>
+            <th><%= product.name %></th>
+            <th><%= product.vendor_id %></th>
+            <th><%= product.list_price%></th>
+            <th><%= product.sell_price %></th>
+            <th><%= product.on_sell%></th>
+
+            
+        </tr>
+        <% end %>
+    </tbody>
+
+</table>
+
+    </div>
