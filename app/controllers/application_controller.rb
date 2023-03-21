@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-
+    include Pagy::Backend
     private
 
     def record_not_found
@@ -8,4 +8,6 @@ class ApplicationController < ActionController::Base
             layout: false,
             status: 404
     end
+
+    
 end

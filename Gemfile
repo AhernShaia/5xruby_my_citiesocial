@@ -65,3 +65,4 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'paranoia', '~> 2.4', '>= 2.4.2'
 
 gem 'friendly_id', '~> 5.3'
+gem 'pagy', '~> 6.0', '>= 6.0.2'

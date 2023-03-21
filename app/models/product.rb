@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
+  has_rich_text :description
   include CodeGenerator
+
   validates :name, presence: true
   validates :list_price, :sell_price, presence: :true, numericality: true, numericality: { greater_than: 0, allow_nil: true }
   validates :code, uniqueness: true
