@@ -15,6 +15,7 @@ class Admin::ProductsController < Admin::BaseController
 
     def new
         @product = Product.new
+        @product.skus.build
     end
 
     def create
@@ -28,14 +29,14 @@ class Admin::ProductsController < Admin::BaseController
 
     def edit
     end
+
     def update
-        @product = Product.new
-        if @product.update(product_params)
-            redirect_to edit_admin_product_path(@product), notice: '商品已更新'
-          else
-            render :edit
-          end
+    if @product.update(product_params)
+      redirect_to edit_admin_product_path(@product), notice: '商品已更新'
+    else
+      render :edit
     end
+  end
 
     def destroy
         @product.destroy
@@ -54,7 +55,9 @@ class Admin::ProductsController < Admin::BaseController
                                         :sell_price, 
                                         :on_sell, 
                                         :vendor_id,
-                                        :description)
+                                        :description,
+                                        skus_attributes: [ :id, :spec, :quantity, :_destroy, :NEW_RECORD]    
+                                    )
         
     end
 end

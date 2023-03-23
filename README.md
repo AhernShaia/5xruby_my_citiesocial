@@ -1,5 +1,6 @@
-# README
+# 向 Citiesocial 致敬
 
+＃＃ 此專案主要目的是為學習ruby on rails的練習，
 * 使用技術
 - ruby ： 2.7.2
 - rails ： 6.0.6.1

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: one
+  spec: MyString
+  quantity: 1
+  deleted_at: 2023-03-22 09:55:26
+
+two:
+  product: two
+  spec: MyString
+  quantity: 1
+  deleted_at: 2023-03-22 09:55:26
