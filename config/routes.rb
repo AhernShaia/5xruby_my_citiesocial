@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     root 'products#index' #/admin
     resources :products, except: [:show]
     resources :vendors, except: [:show]
-    resources :categories, except: [:show]
+    resources :categories, except: [:show] do
+      collection do
+        put :sort
+      end
+    end
   end
 
   namespace :api do
