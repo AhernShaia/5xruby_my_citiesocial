@@ -1,12 +1,17 @@
 <br>
-<h1 class="title">分類列表</h1>
+<div class="container is-flex is-justify-content-space-between	">
+    <h1 class="title">分類列表</h1>
 
-<div class="container">
+    <article class="tag"><i class="fa-solid fa-info"></i> &nbsp提示：可以使用拖拉調整分類順序
+    </article>
+</div>
+<div class="container ">
     <%= link_to "新增分類", new_admin_category_path, class: 'button' %>
 </div>
-<hr>
-<div class="container">
+<br>
 
+<hr>
+<div class="is-flex is-justify-content-center">
 
 <table class="table">
   <thead>
@@ -17,11 +22,10 @@
 
     </tr>
   </thead>
-  <tbody>
+  <tbody class="sortable-items">
   <% @categories.each do |category| %>
-    <tr>
-      <td> <%= category.name %></td>
-      <td> <%= link_to "編輯", edit_admin_category_path(category), class: "button" %></td>
+    <tr class="item" data-item="<%= dom_id(category) %>">
+      <td> <i class="fa-solid fa-grip-vertical"></i> &nbsp<%= link_to category.name, edit_admin_category_path(category), class: "has-text-dark"%></td>
       <td> <%= link_to "刪除", admin_category_path(category), method: "delete", class: "button is-danger", data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>

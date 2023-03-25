@@ -1,7 +1,7 @@
 class Admin::CategoriesController < Admin::BaseController
     before_action :find_category_params, only:[:edit, :update, :destroy]
     def index
-        @categories = Category.all
+        @categories = Category.order(position: :desc)
     end
 
     def new

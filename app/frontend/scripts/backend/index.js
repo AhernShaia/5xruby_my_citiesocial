@@ -1,1 +1,2 @@
-import './application.js';
+import "./application.js";
+import "./sortablejs.js";
