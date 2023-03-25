@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    before_action :find_category, unless: :backend?
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
     include Pagy::Backend
     private
@@ -9,5 +10,11 @@ class ApplicationController < ActionController::Base
             status: 404
     end
 
-    
+    def backend?
+        controller_path.split('/').first == 'Admin'
+    end
+
+    def find_category
+        @categories = Category.order(position: :asc)
+    end
 end
