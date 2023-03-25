@@ -4,3 +4,29 @@
 <div class="container">
     <%= link_to "新增分類", new_admin_category_path, class: 'button' %>
 </div>
+<hr>
+<div class="container">
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>名稱</th>
+      <th></th>
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <% @categories.each do |category| %>
+    <tr>
+      <td> <%= category.name %></td>
+      <td> <%= link_to "編輯", edit_admin_category_path(category), class: "button" %></td>
+      <td> <%= link_to "刪除", admin_category_path(category), method: "delete", class: "button is-danger", data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+   
+  </tbody>
+</table>
+
+</div>
