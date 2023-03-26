@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_23_121220) do
+ActiveRecord::Schema.define(version: 2023_03_26_044801) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 2023_03_23_121220) do
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["code"], name: "index_products_on_code", unique: true
     t.index ["deleted_at"], name: "index_products_on_deleted_at"
     t.index ["vendor_id"], name: "index_products_on_vendor_id"
@@ -123,6 +125,7 @@ ActiveRecord::Schema.define(version: 2023_03_23_121220) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "vendors"
   add_foreign_key "skus", "products"
 end

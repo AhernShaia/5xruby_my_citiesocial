@@ -13,7 +13,7 @@
             <th>定價</th>
             <th>售價</th>
             <th>銷售狀態</th>
-            <th>商品編號</th>
+            <th>商品分類</th>
             <th>描述</th>
             <th></th>
         </tr>
@@ -29,7 +29,7 @@
             <td><%= product.list_price%></td>
             <td><%= product.sell_price %></td>
             <td><%= "已上架" if product.on_sell%></td>
-            <td><%= product.code %></td>
+            <td><%= product.category_id if product.category_id %></td>
             <td><%= product.description %></td>
             <td>
                 <%= link_to "編輯", edit_admin_product_path(product), class: 'button is-light is-small' %>
